@@ -1,0 +1,23 @@
+{
+  "name": "bluehost-github-release-api",
+  "version": "1.0.0",
+  "description": "An AWS Lambda function that pulls information from GitHub about tagged releases to facilitate the update of WordPress plugins.",
+  "main": "index.js",
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluehost/aws-lambda-bluehost-github-release-api.git"
+  },
+  "author": "Micah Wood <micah@wpscholar.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bluehost/aws-lambda-bluehost-github-release-api/issues"
+  },
+  "homepage": "https://github.com/bluehost/aws-lambda-bluehost-github-release-api#readme"
+}
