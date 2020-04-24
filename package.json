@@ -1,23 +1,39 @@
 {
-  "name": "bluehost-github-release-api",
-  "version": "1.0.0",
+  "name": "lambda-bluehost-github-release-api",
   "description": "An AWS Lambda function that pulls information from GitHub about tagged releases to facilitate the update of WordPress plugins.",
   "main": "index.js",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluehost/lambda-bluehost-github-release-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bluehost/lambda-bluehost-github-release-api/issues"
+  },
+  "homepage": "https://github.com/bluehost/lambda-bluehost-github-release-api#readme",
+  "author": "Micah Wood <micah@wpscholar.com>",
+  "license": "GPL-2.0-or-later",
+  "scripts": {
+    "deploy": "node deploy.js",
+    "lint": "npx yamllint **/*.yml --ignore=node_modules/**",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "node-fetch": "^2.6.0"
   },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.7",
+    "yaml-lint": "^1.2.4"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bluehost/aws-lambda-bluehost-github-release-api.git"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
-  "author": "Micah Wood <micah@wpscholar.com>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/bluehost/aws-lambda-bluehost-github-release-api/issues"
-  },
-  "homepage": "https://github.com/bluehost/aws-lambda-bluehost-github-release-api#readme"
+  "lint-staged": {
+    "**/*.yml": [
+      "npm run lint"
+    ]
+  }
 }
