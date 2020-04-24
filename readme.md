@@ -1,11 +1,32 @@
-# Bluehost GitHub Release API
+# AWS Lambda - Bluehost GitHub Release API
+
 An AWS Lambda function that pulls information from GitHub about tagged releases to facilitate the update of WordPress plugins.
 
-## Set Up
+## Usage
+
+Visit `https://bluehost-wp-release.com/v1/?vendorName=:vendorName&packageName=:packageName&pluginBasename=:pluginBasename`.
+
+For example, to fetch the latest release data for the Bluehost WordPress Plugin:
+
+```
+https://bluehost-wp-release.com/v1/?vendorName=bluehost&packageName=bluehost-wordpress-plugin&pluginBasename=bluehost-wordpress-plugin/bluehost-wordpress-plugin.php
+```
+
+## Install
+
 - Run `npm install`
 
 ## Local Testing
+
 - Run `node local.js`
 
 ## Deployment
-- Run `node deploy.js`
+
+By default, this repository is setup to auto-deploy when a new commit is made.
+
+However, if you wish to push changes from your local machine while testing, you can simply run the `npm run deploy` command. 
+
+In order for local deployments to actually work, you will need to:
+
+- Install the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html) tool.
+- Create a [named profile](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html) named `bluehost`. 
