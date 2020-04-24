@@ -47,10 +47,8 @@ exports.handler = async function (event, context, callback) {
 
     response = await fetch(`https://raw.githubusercontent.com/${vendorName}/${packageName}/${release.tag_name}/${pluginFile}`);
     if (response.status !== 200) {
-        if (response.status !== 200) {
-            errorResponse.body = JSON.stringify(await response.json());
-            return errorResponse;
-        }
+        errorResponse.body = JSON.stringify(await response.json());
+        return errorResponse;
     }
     let fileContents = await response.text();
 
@@ -64,10 +62,11 @@ exports.handler = async function (event, context, callback) {
         }
     });
 
+
     response = {
         'last_updated': release.published_at || '',
         'new_version': pluginHeaders['Version'] || '',
-        'package': release.assets[0].browser_download_url || '',
+        'package': release.assets.length ? release.assets[0].browser_download_url : release.zipball_url,
         'plugin': pluginBasename || '',
         'requires_php': pluginHeaders['Requires PHP'] || '',
         'slug': pluginSlug || '',
