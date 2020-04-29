@@ -1,10 +1,16 @@
 # AWS Lambda - Bluehost GitHub Release API
 
+![Deploy to Lambda](https://github.com/bluehost/lambda-bluehost-github-release-api/workflows/Deploy%20to%20Lambda/badge.svg)
+
 An AWS Lambda function that pulls information from GitHub about tagged releases to facilitate the update of WordPress plugins.
 
 ## Usage
 
-Visit `https://bluehost-wp-release.com/v1/?vendorName=:vendorName&packageName=:packageName&pluginBasename=:pluginBasename`.
+Replace the placeholder values below and visit the URL:
+
+```
+https://bluehost-wp-release.com/v1/?vendorName=:vendorName&packageName=:packageName&pluginBasename=:pluginBasename
+```
 
 For example, to fetch the latest release data for the Bluehost WordPress Plugin:
 

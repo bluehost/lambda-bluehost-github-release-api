@@ -15,7 +15,7 @@
   "license": "GPL-2.0-or-later",
   "scripts": {
     "deploy": "node deploy.js",
-    "lint": "npx yamllint **/*.yml --ignore=node_modules/**",
+    "lint": "yamllint --ignore=node_modules/** **/*.yml",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -33,7 +33,7 @@
   },
   "lint-staged": {
     "**/*.yml": [
-      "npm run lint"
+      "yamllint --ignore=node_modules/**"
     ]
   }
 }
