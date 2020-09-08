@@ -7,7 +7,7 @@ handler({
     queryStringParameters: {
         vendorName: 'bluehost',
         packageName: 'bluehost-wordpress-plugin',
-        pluginBasename: 'bluehost-wordpress-plugin/bluehost.php'
+        pluginBasename: 'bluehost-wordpress-plugin/bluehost-wordpress-plugin.php'
     }
 })
     .then(response => console.log(response))

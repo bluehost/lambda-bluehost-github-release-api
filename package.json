@@ -19,9 +19,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.1"
   },
   "devDependencies": {
+    "aws-sdk": "^2.747.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.1.7",
     "yaml-lint": "^1.2.4"
